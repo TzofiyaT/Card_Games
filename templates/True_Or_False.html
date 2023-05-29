@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/True_Or_False" method="POST" id="myForm">
+    <div class="row">
+        {% for name in numbers %}
+            <div class="col">
+                <div class="space">
+                    <div class="col">
+                        <p><input type=submit value="{{name}}" name="players" class="btn btn-success"></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</form>
+
+{% endblock content %}

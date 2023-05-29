@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="#" method="POST" id="myForm">
+    {% for name in players %}
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">{{ name }}</span>
+            <input type="text" class="form-control" name="player" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+    {% endfor %}
+    <div class="space">
+        <div class="col">
+            <p><input type=submit value="Next" class="btn btn-success"></p>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

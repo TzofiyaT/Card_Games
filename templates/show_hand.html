@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+    <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ player }}</h1>
+    <div class="row">
+        <div class="col">
+        {% for card in cards %}
+            <img src="{{card}}.png" height="100">
+        {% endfor%}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="space">
+                {% if deal %}
+                <a href="/take" class="btn btn-success">take</a>
+                {% else %}
+                <a class="btn btn-success disabled" role="button" aria-disabled="true">take</a>
+                {% endif %}
+                 </div>
+             </div>
+{% for c in choose %}
+        <div class="col">
+            <div class="space">
+                <a href="/{{ c }}" class="btn btn-success">{{ c }}</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="static/images/invisible_card.png" height="100">
+        </div>
+        <div class="col">
+            <h1>The last card is: </h1>
+        </div>
+        <div class="col">
+            <h1>{{ last }}</h1>
+        </div>
+    </div>
+</body>
+{% endblock content %}

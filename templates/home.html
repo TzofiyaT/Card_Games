@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for game in games %}
+        <div class="col">
+            <div class="space">
+            <a href="/{{ game }}" class="btn btn-success">{{ game }}</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

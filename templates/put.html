@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      var selectedOption = document.querySelector('input[name="option"]:checked').value;
+      console.log("Selected option: " + selectedOption); }
+  </script>
+</head>
+<body>
+<h1>{{ player }} choose card:</h1>
+<form action="/put" method="POST" id="myForm">
+
+        <div class="row">
+
+            {% for card in cards %}
+            <div class="col">
+                <div class="space">
+                        <label><input type="radio" name="option" value="{{card}}"><img src="{{card}}.png" height="100"></label><br>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+
+    <h1>{{ player }} choose number to say:</h1>
+    <div class="row">
+
+            {% for t in tell %}
+            <div class="col">
+                <div class="space">
+                        <label><input type="radio" name="option2" value="{{t}}">{{t}}</label><br>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+
+<div class="col">
+<!--    <button type="submit" class="btn btn-success">put</button>-->
+    <p><input type=submit value=Next class="btn btn-success"></p>
+    </div>
+
+  </form>
+</body>
+{% endblock content %}

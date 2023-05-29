@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>The card from pile is:</h2>
+    <img src="{{pile_card}}.png" height="100">
+    <h2>The card that last player said is:</h2>
+    <h2>{{ last_card }}</h2>
+    <h2>Result {{ tof }}</h2>
+    <h2>The pile go to {{ player }}</h2>
+
+    <a href="/put" class="btn btn-success">put</a>
+
+</body>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1>The winner is: {{ winner }}</h1>
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="space">
+            <a href="/home" class="btn btn-success">End game</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="space">
+            <a href="/True_Or_False" class="btn btn-success">New game</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
